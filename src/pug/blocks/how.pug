@@ -1,0 +1,42 @@
+section.section.how
+	.how__image_col
+		+picture({
+			class: 'how__img',
+			img_class: 'how__img_in',
+			img: `how_img.png`,
+			alt: 'laptop',
+		})
+	.section_in.how__in
+		h2.how__title
+			.how__title_in Как проходит обучение
+		.how__row
+			.how__col
+				ul.how__list
+					-
+						list = ['Структурированные уроки от 20 до 80 минут', 'Еженедельные групповые созвоны (пакет Голд и Vip)', 'Телеграм-чат с поддержкой', 'Проверка домашних заданий', 'Постоянная обратная связь', 'Неограниченный доступ к курсу']
+					each item, index in list
+						li.how__item
+							+picture({
+								class: 'how__icon',
+								img_class: 'how__icon_in',
+								img: `how_${index}.png`,
+								alt: 'icon',
+							})
+							.how__descr= item
+				.how__info
+					.how__info_icon
+						+icon('how_info', 'icon--size_mod')
+					+picture({
+						class: 'how__info_bg',
+						img_class: 'how__info_bg_in',
+						img: `how_bg.png`,
+						alt: 'laptop',
+					})
+					.how__info_descr Для просмотра уроков вам подойдет телефон или ноутбук
+			//- .how__col
+			//- 	+picture({
+			//- 		class: 'how__img',
+			//- 		img_class: 'how__img_in',
+			//- 		img: `how_img.png`,
+			//- 		alt: 'laptop',
+			//- 	})

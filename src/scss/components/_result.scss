@@ -1,0 +1,52 @@
+@import 'ScssHelpers/_helpers_all.scss';
+
+.result__title {
+	@extend %global_flex_block_row_wrap_center_center;
+	margin-bottom: 5.6rem;
+}
+
+.result__title_in {
+	@extend %h2;
+
+	text-align: center;
+}
+
+.result__list_w {
+	max-width: 100rem;
+	width: 100%;
+	margin: 0 auto;
+}
+
+.result__list {
+	@extend %global_flex_block_row_wrap_flex-start;
+
+	margin: 0 -3.5rem -10rem 0;
+	color: $white;
+}
+
+.result__item {
+	width: calc(100% / 2);
+
+	padding: 0 3.5rem 10rem 0;
+}
+
+.result__item_in {
+	position: relative;
+	padding-left: 15.9rem;
+}
+
+.result__icon {
+	position: absolute;
+	left: 0;
+	top: 0;
+
+	width: 12.6rem;
+	height: 10.8rem;
+}
+
+.result__descr {
+	max-width: 36rem;
+	font-weight: 400;
+	font-size: 2rem;
+	line-height: 1.4;
+}

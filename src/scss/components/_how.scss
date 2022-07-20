@@ -1,0 +1,145 @@
+@import 'ScssHelpers/_helpers_all.scss';
+
+%descr_text {
+	font-weight: 400;
+	font-size: 2rem;
+	line-height: 1.5;
+}
+
+.how__image_col {
+	position: absolute;
+	right: 0;
+	top: 10rem;
+	z-index: -1;
+
+	width: 63%
+}
+
+.how__title {
+	@extend %global_flex_block_row_wrap_center_center;
+	margin-bottom: 10.2rem;
+}
+
+.how__title_in {
+	@extend %h2;
+
+	text-align: center;
+}
+
+.how__row {
+	@extend %global_flex_block_row_nowrap_flex-start;
+}
+
+.how__col {
+	&:first-child {
+		width: 100%;
+		max-width: 46.4rem;
+	}
+	&:nth-child(2) {
+		flex-grow: 1;
+	}
+}
+
+.how__img {
+	display: block;
+
+	width: 100%;
+	height: 100%;
+}
+
+.how__img_in {
+	display: block;
+
+	width: 100%;
+	height: 100%;
+
+	object-fit: contain;
+}
+
+.how__list {
+	max-width: 40rem;
+	margin-bottom: 8rem;
+}
+
+.how__item {
+	@extend %global_flex_block_row_wrap_flex-start_center;
+	position: relative;
+
+	padding-left: 7.3rem;
+	margin-bottom: 3rem;
+	min-height: 5rem;
+}
+
+.how__icon {
+	position: absolute;
+	left: 0;
+	top: 0;
+
+	display: block;
+	width: 5rem;
+	height: 5rem;
+}
+
+.how__descr {
+	@extend %descr_text;
+
+	color: $white;
+}
+
+.how__info {
+	position: relative;
+
+	padding: 4rem 3.4rem;
+}
+
+.how__info_descr {
+	max-width: 26rem;
+
+	font-weight: 600;
+	font-size: 1.8rem;
+	list-style: 1.4;
+	color: $white;
+}
+
+.how__info_bg {
+	position: absolute;
+	z-index: -1;
+	top: 0;
+	left: 0;
+
+	width: 100%;
+	height: 100%;
+}
+
+.how__info_bg_in {
+	display: block;
+
+	width: 100%;
+	height: 100%;
+}
+
+.how__info_icon {
+	position: absolute;
+	z-index: 2;
+	top: -1.1rem;
+	left: 5rem;
+	width: 2.2rem;
+	height: 2.2rem;
+
+	&:after {
+		position: absolute;
+		z-index: -1;
+		left: -1.6rem;
+		top: -1.6rem;
+		display: block;
+
+		width: 5.3rem;
+		height: 5.3rem;
+		border-radius: 50%;
+
+		background: linear-gradient(67.83deg, rgba(182, 182, 182, 0.1) 3.52%, rgba(39, 39, 39, 0.1) 99.38%);
+		backdrop-filter: blur(2rem);
+
+		content: '';
+	}
+}

@@ -1,0 +1,28 @@
+section.section.why
+	.section_in.why__in
+		h2.why__title
+			.why__title_in Почему рекламные креативы?
+		ul.why__list
+			-
+				whyList = [
+					{
+						title: 'Независимый источник дохода',
+						descr: 'Работаете на себя и сами управляете своим доходом',
+					},
+					{
+						title: 'Нет привязки <br> к месту',
+						descr: 'Можно работать в любой точке мира. Все что нужно - компьютер и интернет',
+					},
+					{
+						title: 'Сами решаете когда и сколько вам работать',
+						descr: 'Вы полностью управляете потоком клиентов и графиком работы. Берёте в работу столько проектов, сколько считаете нужным',
+					},
+				]
+			each item, index in whyList
+				li.why__item
+					.why__item_in
+						.why__item_img
+							img.why__item_img_in(src=`images/why_num_${index}.svg`, alt="number")
+						.why__item_info
+							.why__item_title!= item.title
+							.why__item_descr= item.descr

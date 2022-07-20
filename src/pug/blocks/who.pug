@@ -1,0 +1,54 @@
+section.section.who
+	+picture({
+		class: 'who__decor_1',
+		img_class: 'who__decor_in',
+		img: `whiteEl.png`,
+		alt: 'decor',
+	})
+	+picture({
+		class: 'who__decor_2',
+		img_class: 'who__decor_in',
+		img: `blueEl.png`,
+		alt: 'decor',
+	})
+	+picture({
+		class: 'who__decor_3',
+		img_class: 'who__decor_in',
+		img: `wave.png`,
+		alt: 'decor',
+	})
+	.section_in.who__in
+		h2.who__title
+			.who__title_in Для кого подойдет обучение
+		ul.who__list
+			-
+				whoList = [
+					{
+						title: 'Новичок',
+						descr: 'С нуля освоите перспективную профессию графического дизайнера и начнете зарабатывать уже во время обучения',
+						info: 'Лучший результат наставляемого – 1250$ за первый месяц обучения'
+					},
+					{
+						title: 'Действующий дизайнер',
+						descr: 'Значительно повысите уровень своих работ, поднимите средний чек на свои услуги. Сильно прокачаете себя в продажах, научитесь вести переговоры с позиции силы и выстроите очередь из клиентов',
+					},
+					{
+						title: 'СММ дизайнер',
+						descr: 'Научитесь делать качественное визуальное наполнение для инстаграм аккаунта, тем самым сможете комплексно закрывать клиентов и повысить свой доход',
+					},
+					{
+						title: 'Таргетолог',
+						descr: 'Научитесь делать эффективные креативы с высоким CTR. Поймете основные принципы управления вниманием зрителя и научитесь управлять им',
+					},
+				]
+			each item, index in whoList
+				li.who__item
+					.who__item_in
+						.who__item_number
+							img.who__item_number_img(src=src=`images/who_num_${index}.png`)
+						.who__item_title= item.title
+						.who__item_descr= item.descr
+						if item.info
+							.who__item_info= item.info
+
+

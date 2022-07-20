@@ -1,0 +1,93 @@
+section.section.cases
+	+picture({
+		class: 'cases__decor',
+		img_class: 'cases__decor_in',
+		img: `wave.png`,
+		alt: 'decor',
+	})
+	.section_in.cases__in
+		h2.cases__title
+			.cases__title_in кейсы учеников
+		.cases__slider_w
+			.slider_arrow--prev
+				.slider_arrow_icon
+			.slider_arrow--next
+				.slider_arrow_icon
+			.cases__slider.CasesSlider
+				-
+					list = [
+						{
+							name: 'Екатерина<br> железнова',
+							con: '@black__girl._k',
+							city: 'Познань',
+							num_a: '350',
+							num_b: '1250',
+							date: 'За первый месяц обучения',
+						},
+						{
+							name: 'кирилл<br> шаманаев',
+							con: '@shaman.kl',
+							city: 'Одесса',
+							num_a: '300',
+							num_b: '905',
+							date: 'На 20 день обучения',
+						},
+						{
+							name: 'яна<br> абросимова',
+							con: '@nesmeyana12',
+							city: 'Одесса',
+							num_a: '0',
+							num_b: '1000',
+							date: 'На второй месяц после обучения',
+						},
+						{
+							name: 'Дмитрий<br> душейко',
+							con: '@dusheiko_d',
+							city: 'Киев',
+							num_a: '200',
+							num_b: '1000',
+							date: 'После обучения',
+						},
+						{
+							name: 'кирилл<br> ЗАПУНЯКО',
+							con: '@kirill_zapun',
+							city: 'Минск',
+							num_a: '0',
+							num_b: '400',
+							date: 'На второй месяц после обучения',
+						},
+						{
+							name: 'Назар<br> Гуменюк',
+							con: '@humeniuk.design',
+							city: 'Киев',
+							num_a: '150',
+							num_b: '400',
+							date: 'После обучения',
+						},
+						{
+							name: 'Вадим<br> Емелин',
+							con: '@humeniuk.design',
+							city: 'Киев',
+							num_a: '120',
+							num_b: '450',
+							date: 'Во время обучения',
+						},
+					]
+				each item, index in list
+					.cases__item
+						.cases__item_in
+							+picture({
+								class: 'cases__item_img',
+								img_class: 'cases__item_img_in',
+								img: `cases_${index}.jpg`,
+								alt: 'people',
+							})
+							.cases__item_info
+								.cases__info_row
+									.cases__item_name!= item.name
+									.cases__item_contact= item.con
+								.cases__item_city= item.city
+								.cases__item_dot= `точка а - ${item.num_a}$ в месяц`
+								.cases__item_dot= `точка б - ${item.num_b}$ в месяц`
+								.cases__item_date= item.date
+

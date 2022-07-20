@@ -1,0 +1,88 @@
+.footer {
+	width: 100%;
+	padding: 8rem var(--gl-indent);
+	min-height: var(--height-footer);
+	flex: 0 0 auto;
+
+	font-size: 1rem;
+
+	will-change: transform;
+}
+
+.footer__in {
+	max-width: $page_width;
+	margin: 0 auto;
+}
+
+.footer__row {
+	@extend %global_flex_block_row_wrap_flex-start;
+
+	margin-bottom: 6rem;
+
+	&:last-child {
+		margin-bottom: 0;
+	}
+}
+
+.footer__col {
+	max-width: 40rem;
+	width: 100%;
+}
+
+.footer__logo {
+	display: block;
+	width: 25.8rem;
+	height: 5.6rem;
+}
+
+.footer__question {
+	max-width: 27.1rem;
+	font-weight: 400;
+	font-size: 1.5rem;
+	line-height: 1.8rem;
+	color: #FFFFFF;
+}
+
+.footer__link {
+	display: block;
+	margin-bottom: .6rem;
+
+	font-weight: 400;
+	font-size: 1.5rem;
+	line-height: 1.5;
+
+	text-decoration-line: underline;
+	color: #8B8B8B;
+	transition: color ease .3s;
+
+	&:hover {
+		color: $blue;
+	}
+
+	&:last-child {
+		margin-bottom: 0;
+	}
+}
+
+.footer__telega_btn {
+	@include flex_block(row, wrap, center, center, center);
+	display: inline-flex;
+	padding: .8rem 2.4rem .8rem 1.6rem;
+	font-size: 1.5rem;
+	color: #141414;
+	background-color: #fff09f;
+	border-radius: 8rem;
+	transition: background-color ease .3s;
+
+	img {
+		display: block;
+		width: 1.5rem;
+		height: 1.5rem;
+		margin-right: .8rem;
+	}
+
+	&:hover {
+		text-decoration: none;
+		background-color: darken(#fff09f, 10%)
+	}
+}

@@ -1,0 +1,164 @@
+section.section.materials
+	.section_in.materials__in
+		h2.materials__title
+			.materials__title_in #[strong 26 дополнительных] #[br] материалов
+		.materials__slider_w
+			.materials__slider.MaterialsSlider
+				-
+					list = [
+						{
+							subList: [
+								{
+									icon: 'n',
+									descr: 'Грамотная постановка и движение к целям',
+								},
+								{
+									icon: 'n',
+									descr: 'Карта развития на 6 месяцев',
+								},
+							]
+						},
+						{
+							subList: [
+								{
+									icon: 'p',
+									descr: 'Терминология/сленг',
+								},
+								{
+									icon: 'n',
+									descr: 'Подборка источников для вдохновения',
+								},
+							]
+						},
+						{
+							subList: [
+								{
+									icon: 'n',
+									descr: 'Маст-хэв сервисы для дизайнеров',
+								},
+								{
+									icon: 'n',
+									descr: 'Шпаргалка горячих клавиш фотошоп',
+								},
+							]
+						},
+						{
+							subList: [
+								{
+									icon: 'n',
+									descr: 'Ресурсы и сервисы для создания эффективных креативов',
+								},
+								{
+									icon: 'b',
+									descr: 'Design Box от Alex Fisher. Пак бесплатных материалов и ресурсов для дизайнеров',
+								},
+							]
+						},
+						{
+							subList: [
+								{
+									icon: 'b',
+									descr: 'Пак шрифтов с поддержкой кириллицы',
+								},
+								{
+									icon: 'n',
+									descr: 'Ресурсы для работы со шрифтами',
+								},
+							]
+						},
+						{
+							subList: [
+								{
+									icon: 'bg',
+									descr: 'Шпаргалка насамые популярные размеры макетов',
+								},
+								{
+									icon: 'psd',
+									descr: 'Вспомогательные сетки для самых популярных размеров',
+								},
+								{
+									icon: 'n',
+									descr: 'Шаблон ТЗ для креативов',
+								},
+							]
+						},
+						{
+							subList: [
+								{
+									icon: 'f',
+									descr: 'Плагины Figma',
+								},
+								{
+									icon: 'l',
+									descr: 'Конструктор креативов',
+								},
+							]
+						},
+						{
+							subList: [
+								{
+									icon: 'b',
+									descr: 'Пак видео для фона',
+								},
+								{
+									icon: 'h',
+									descr: 'Музыка без авторских прав',
+								},
+							]
+						},
+						{
+							subList: [
+								{
+									icon: 'm',
+									descr: 'Пак звуковых эффектов',
+								},
+								{
+									icon: 'a',
+									descr: 'Шаблоны для соц. сетей',
+								},
+							]
+						},
+						{
+							subList: [
+								{
+									icon: 'n',
+									descr: 'Инструкция по созданию кликабельного портфолио в телеграм',
+								},
+								{
+									icon: 'psd',
+									descr: 'Прототип оформления графического резюме для бирж фриланса и Behance',
+								},
+								{
+									icon: 'n',
+									descr: 'Список проверенных фриланс бирж',
+								},
+							]
+						},
+						{
+							subList: [
+								{
+									icon: 'n',
+									descr: 'Шаблон коммерческого предложения',
+								},
+								{
+									icon: 't',
+									descr: 'Список телеграм чатов с предпринимателями',
+								},
+								{
+									icon: 'n',
+									descr: 'Скрипты для переговоров',
+								},
+							]
+						},
+					]
+				each item, index in list
+					.materials__item
+						.materials__item_in
+							.materials__item_row
+								each subitem, index in item.subList
+									.materials__item_block
+										img.materials__item_img(src=`/images/${subitem.icon}.jpg`)
+										.materials__item_block_text= subitem.descr
+
+			.slider_dots
+

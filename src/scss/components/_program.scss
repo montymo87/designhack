@@ -1,0 +1,261 @@
+@import 'ScssHelpers/_helpers_all.scss';
+
+%program_text {
+	font-size: 1.5rem;
+	line-height: 1.5;
+}
+
+.program__title {
+	@extend %global_flex_block_row_wrap_center_center;
+	margin-bottom: 7.4rem;
+}
+
+.program__title_in {
+	@extend %h2;
+}
+
+.program__list {
+	columns: 3;
+	gap: 3rem;
+
+	.program__item:nth-child(1n+4) {
+		display: none;
+	}
+
+	&.program__list--active_state .program__item {
+		display: block;
+	}
+}
+
+.program__item_in {
+	position: relative;
+	border: 1px solid #7B7B7B;
+	background: linear-gradient(52.7deg, #1F1F1F 8.37%, #2D2D2D 81.06%);
+	border-radius: 1rem;
+}
+
+.program__item {
+	color: $white;
+	margin-bottom: 5.7rem;
+  break-inside: avoid;
+
+	&.program__item--new .program__item_offer_item--new {
+		display: block;
+	}
+
+	&.program__item--prem .program__item_offer_item--prem {
+		display: block;
+	}
+
+	&.program__item--vip .program__item_offer_item--vip {
+		display: block;
+	}
+}
+
+.program__item_offer {
+	@extend %global_flex_block_row_wrap_flex-start_center;
+
+	position: absolute;
+	top: 0;
+	left: 0;
+
+	width: 100%;
+	padding: 0 1.2rem 0 var(--program_indent);
+
+	transform: translateY(-50%);
+
+	gap: .4rem;
+}
+
+.program__item_offer_item {
+	display: none;
+
+	&.program__item_offer_item--num {
+		display: block;
+
+		padding: .4rem 1rem;
+		background-color: $blue;
+
+		font-weight: 600;
+		font-size: 2rem;
+		border-radius: 5px;
+		border: 1px solid #4f3ff6;
+	}
+
+	&.program__item_offer_item--new {
+		width: 5.5rem;
+		height: 5.5rem;
+
+		background: url('../../images/offer_new.png') no-repeat center center / 100% 100%;
+	}
+
+	&.program__item_offer_item--prem {
+		padding: .7rem 1.4rem;
+		background-color: #FFF09F;
+		color: #141414;
+		border-radius: 8rem;
+		font-family: $font_2;
+		font-size: 1.8rem;
+	}
+
+	&.program__item_offer_item--vip {
+		padding: .7rem 1.4rem;
+		min-width: 6.2rem;
+		background-color: #ad00ff;
+		color: $white;
+		border-radius: 8rem;
+		font-family: $font_2;
+		font-size: 1.8rem;
+		text-align: center;
+	}
+}
+
+.program__item_title {
+	padding: 5rem var(--program_indent) 3.4rem;
+
+	border-bottom: 1px solid #7B7B7B;
+
+	font-weight: 700;
+	font-family: $font_2;
+	font-size: 4rem;
+	line-height: 1;
+}
+
+.program__item_descr {
+	padding: 4rem var(--program_indent) 1rem;
+}
+
+.program__item_descr_title {
+	margin-bottom: 1.2rem;
+
+	font-weight: 700;
+	font-family: $font_2;
+	font-size: 2.5rem;
+	line-height: 1;
+
+	&.program__item_descr_title--offset_mod {
+		margin-top: 3rem;
+	}
+}
+
+.program__item_result {
+	padding: 4rem var(--program_indent);
+
+	background-color: #3322F8;
+	border-top: 1px solid #7B7B7B;
+	border-bottom-left-radius: 1rem;
+	border-bottom-right-radius: 1rem;
+}
+
+.program__item_mat_list,
+.program__item_descr_list {
+	padding-left: 2.6rem;
+}
+
+.program__item_descr_item {
+	@extend %program_text;
+	position: relative;
+
+	margin-bottom: 1.4rem;
+
+	span {
+		position: relative;
+		display: inline-block;
+		padding: 0 1.6rem;
+		margin-left: .5rem;
+
+		font-family: $font_2;
+		font-size: 1.5rem;
+		border-radius: 8rem;
+		border: 1px solid rgba(73, 73, 73, 0.24);
+		background-image: linear-gradient(67.83deg, rgba(210, 210, 210, 0.1) 3.52%, rgba(77, 77, 77, 0.1) 99.38%);
+
+		&:after {
+			position: absolute;
+			left: -.5rem;
+			top: .5rem;
+			z-index: 1;
+			display: block;
+			width: 1.1rem;
+			height: 1.1rem;
+
+			background: url('../../images/star.png') no-repeat center center / 100% 100%;
+			content: '';
+		}
+	}
+
+	&:after,
+	&:before {
+		position: absolute;
+		left: -2.6rem;
+		display: block;
+
+		border-radius: 50%;
+		content: "";
+	}
+
+	&:before {
+		top: .4rem;
+		left: -2.9rem;
+		width: 1.3rem;
+		height: 1.3rem;
+
+		border-left: 1px solid $blue;
+		border-bottom: 1px solid $blue;
+		border-right: 1px solid rgba(123, 123, 123, 0);
+		border-top: 1px solid rgba(123, 123, 123, 0);
+		transform: rotate(-135deg);
+	}
+
+	&:after {
+		top: .7rem;
+		width: .7rem;
+		height: .7rem;
+
+		background-color: $blue;
+	}
+}
+
+.program__item_mat_item {
+	margin-bottom: 2rem;
+}
+
+.program__item_mat_item {
+	@extend %program_text;
+	position: relative;
+}
+
+.program__item_mat_img {
+	position: absolute;
+	top: 0;
+	left: -2.6rem;
+}
+
+.program__item_result_descr {
+	@extend %program_text;
+}
+
+.program__btn_w	{
+	@extend %global_flex_block_row_wrap_center_center;
+
+	margin-top: 8rem
+}
+
+.program__btn {
+	@extend %blue_btn_1;
+	@extend %btn_size_2;
+}
+
+.program__decor {
+	position: absolute;
+	top: 0;
+	display: block;
+
+	width: 100vw;
+	height: 200vh;
+	pointer-events: none;
+}
+
+.program__decor_in {
+	@extend %cover_img;
+}

@@ -1,0 +1,98 @@
+@mixin st_btn() {
+	display: inline-flex;
+	justify-content: center;
+	align-items: center;
+
+	text-align: center;
+	white-space: nowrap;
+	font-family: $font_1;
+
+	cursor: pointer;
+
+	&:hover, &:focus {
+		text-decoration: none;
+	}
+}
+
+//color extends
+%blue_btn_1 {
+	font-weight: 700;
+	color: $white;
+	background: linear-gradient(to left, #3322F8 0%, #6E62FF 60.42%, #3322F8 100%);
+	background-size: 200%;
+	transition: all .3s ease;
+
+	@include st_btn();
+
+	&:hover {
+		background-position: right;
+	}
+
+}
+
+%yellow_btn {
+	color: #5F441C;
+	text-transform: uppercase;
+	background: linear-gradient(to left, #5492ee 0%, #f3ca15 70.42%, #EEB854 100%);
+	background-size: 200%;
+	transition: all .3s ease;
+
+	@include st_btn();
+
+	&:hover {
+		background-position: right;
+	}
+}
+
+%gray_btn {
+	color: #585858;
+	text-transform: uppercase;
+	background: linear-gradient(to left, #5492ee 0%, #FFFEFA 70.42%, #BDBDBD 100%);
+	box-shadow: 0px 20px 30px rgba(251, 250, 246, 0.16), 0px 2px 0px #A6A6A6, inset 0px 0px 20px rgba(255, 255, 255, 0.43);
+	background-size: 200%;
+	transition: all .3s ease;
+
+	@include st_btn();
+
+	&:hover {
+		background-position: right;
+	}
+}
+
+//size extends
+%btn_size_1 {
+	height: 4rem;
+	padding: 0 1.2rem;
+
+	line-height: 4rem;
+	font-size: 1.6rem;
+
+	border-radius: $gl_radius;
+}
+
+%btn_size_2 {
+	height: 13.4rem;
+	min-width: 44.7rem;
+	padding: 0 2rem;
+
+	line-height: 13.4rem;
+	font-size: 2.2rem;
+	font-family: $font_1;
+	font-weight: 600;
+	letter-spacing: 0.08em;
+
+	border-radius: 1.3rem;
+}
+
+%btn_size_3 {
+	height: 8.9rem;
+	width: 100%;
+	padding: 0 2rem;
+
+	line-height: 8.9rem;
+	font-size: 1.5rem;
+	font-family: $font_1;
+	font-weight: 600;
+
+	border-radius: 1.3rem;
+}

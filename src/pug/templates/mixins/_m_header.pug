@@ -1,0 +1,13 @@
+mixin header
+	header.header
+		.header__in
+			a.header__logo(href="#")
+				img(src="images/logo.svg", alt="logo").header__logo_in
+			.header__info
+				each item in [{title: '25 июня', text: 'Старт курса', icon: 'date'}, {title: '60 дней', text: 'Длительность', icon: 'time'}]
+					.header__date
+						.header__date_icon
+							+icon(item.icon, 'icon--size_mod')
+							//- img(src=`images/${item.icon}.svg`, alt="date")
+						.header__date_title= item.title
+						.header__date_text= item.text

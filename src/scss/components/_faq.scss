@@ -1,0 +1,144 @@
+@import 'ScssHelpers/_helpers_all.scss';
+
+%descr_text {
+	font-weight: 400;
+	font-size: 2rem;
+	line-height: 1.5;
+}
+
+.faq__title {
+	@extend %global_flex_block_row_wrap_center_center;
+	margin-bottom: 5rem;
+}
+
+.faq__title_in {
+	@extend %h2;
+
+	text-align: center;
+}
+
+
+.accordion__item_body {
+	color: #727272;
+	font-weight: 400;
+
+// *
+// important style to work
+// *
+
+	max-height: 0;
+	opacity: 0;
+
+	transition: all 0.25s ease-out;
+	will-change: max-height;
+	overflow: hidden;
+	pointer-events: none;
+
+	.accordion__item--active-mod & {
+		opacity: 1;
+		pointer-events: auto;
+	}
+
+// *
+// important style to work /
+// *
+
+}
+
+// ----------------------------------------------------------
+
+//---------------------------------------------accordion
+.icon {
+	&.size-mod {
+		display: block;
+		width: 100%;
+		height: 100%;
+	}
+}
+
+.accordion__item {
+	border: 1px solid #7B7B7B;
+	border-radius: 1rem;
+}
+
+.accordion__item_head {
+	@extend %global_flex_block_row_nowrap_flex-start_center;
+	position: relative;
+
+	min-height: 10.5rem;
+	padding: 1rem 12rem 1rem 7rem;
+
+	cursor: pointer;
+
+	transition: background ease .3s;
+
+	background: linear-gradient(52.7deg, #1F1F1F 8.37%, #2D2D2D 81.06%);
+	border-radius: 1rem;
+
+	.accordion__item--active-mod & {
+		background: $blue;
+		border-radius: 1rem 1rem 0 0;
+		// border: 1px solid red;
+	}
+
+	&:focus,
+	&:hover {
+		background: $blue;
+	}
+
+	.accordion__item_icon_w {
+		position: absolute;
+		right: 7rem;
+		display: block;
+		margin: 0 0 0 auto;
+		width: 4rem;
+		height: 4rem;
+
+		transform-origin: center;
+		transition: .3s;
+		transform: rotateZ(180deg);
+
+		.accordion__item--active-mod & {
+			transform: rotateZ(0deg);
+		}
+	}
+
+	.accordion__item--active-mod & {
+		border-color: transparent;
+	}
+}
+
+.accordion__item_title {
+	font-weight: 500;
+	font-size: 2rem;
+	line-height: 1.2;
+	color: $white;
+}
+
+.accordion__item_body {
+	font-size: 1.6rem;
+}
+
+.accordion__item {
+	margin-bottom: 1rem;
+
+	&:last-child {
+		margin-bottom: 0;
+	}
+}
+
+.accordion__item_body_in {
+	padding: 4rem 12rem 3rem 7rem;
+
+	background: #3322F8;
+	border-radius: 0 0 1rem 1rem;
+	border-top: 1px solid #7b7b7b;
+	color: $white;
+	font-weight: 400;
+	font-size: 1.5rem;
+	line-height: 1.66;
+}
+
+.accordion__item_body_limit {
+	max-width: 58.2rem;
+}
