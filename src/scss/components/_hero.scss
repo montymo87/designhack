@@ -12,15 +12,19 @@
 	height: 100%;
 }
 
-.hero__face {
+.hero_img_block {
 	position: absolute;
 	z-index: 1;
 	left: 50%;
 	top: 50%;
-	margin: -41rem 0 0 -34rem;;
+	margin: -42rem 0 0 -41rem;;
+}
+
+.hero__face {
+
 	display: block;
 
-	width: 109rem;
+	width: 124rem;
 	height: 136rem;
 }
 
@@ -60,6 +64,7 @@
 
 .hero__title {
 	@extend %gradient_txt;
+	max-width: 66rem;
 	margin-bottom: 2.2rem;
 
 	font-family: $font_2;
@@ -110,7 +115,7 @@
 
 	strong {
 		color: white;
-		font-weight: 600;
+		font-weight: 500;
 	}
 }
 
