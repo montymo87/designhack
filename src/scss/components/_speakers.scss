@@ -24,8 +24,17 @@
 
 .speakers__img {
 	position: absolute;
-	top: -30%;
-	left: -17.2rem;
+	top: -26%;
+	left: -10.2rem;
+	display: block;
+	width: 35vw;
+	height: auto;
+}
+
+.speakers__img_in {
+	display: block;
+	width: 100%;
+	height: auto;
 }
 
 .speakers__col_info {

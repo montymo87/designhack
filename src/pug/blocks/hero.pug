@@ -5,14 +5,16 @@ section.section.hero
 		img: 'hero_1.png',
 		alt: 'background image',
 	})
-	+picture({
-		class: 'hero__face',
-		img_class: 'hero__face_in',
-		img: 'hero_2.png',
-		alt: 'speaker',
-	})
+	.hero_img_block
+		+picture({
+			class: 'hero__face',
+			img_class: 'hero__face_in',
+			img: 'newhero.png',
+			alt: 'speaker',
+		})
+
 	.section_in.hero__in
 		.hero__content
-			h1.hero__title #[div Дизайн #[p Онлайн#[br] курс#[br]  #[span Новая возможность #[br] в текущих реалиях]]] рекламных #[br] креативов
+			h1.hero__title #[div Дизайн #[p Онлайн#[br] курс#[br]  #[span Новая возможность #[br] в текущих реалиях]]] рекламных креативов
 			p.hero__descr Вы с #[strong полного нуля научитесь дизайну] рекламных креативов и #[strong начнете получать ежемесячную прибыль] от 500$ до 2 500$
 			a.hero__btn(href="#") ПРИНЯТЬ УЧАСТИЕ
