@@ -1,7 +1,7 @@
 section.section.why
 	.section_in.why__in
-		h2.why__title
-			.why__title_in Почему рекламные креативы?
+		.why__title
+			h2.why__title_in Почему рекламные креативы?
 		ul.why__list
 			-
 				whyList = [
@@ -21,6 +21,9 @@ section.section.why
 			each item, index in whyList
 				li.why__item
 					.why__item_in
+						if index == 1
+							//- +icon('why_border_2', 'icon--size_mod')
+							.why__item_decor
 						.why__item_img
 							img.why__item_img_in(src=`images/why_num_${index}.svg`, alt="number")
 						.why__item_info

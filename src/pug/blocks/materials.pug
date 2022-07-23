@@ -1,7 +1,7 @@
 section.section.materials
 	.section_in.materials__in
-		h2.materials__title
-			.materials__title_in #[strong 26 дополнительных] #[br] материалов
+		.materials__title
+			h2.materials__title_in #[strong 30 дополнительных] #[br] материалов
 		.materials__slider_w
 			.materials__slider.MaterialsSlider
 				-
@@ -10,7 +10,7 @@ section.section.materials
 							subList: [
 								{
 									icon: 'n',
-									descr: 'Грамотная постановка и движение к целям',
+									descr: 'Грамотная постановка целей',
 								},
 								{
 									icon: 'n',
@@ -70,7 +70,7 @@ section.section.materials
 							subList: [
 								{
 									icon: 'bg',
-									descr: 'Шпаргалка насамые популярные размеры макетов',
+									descr: 'Шпаргалка на самые популярные размеры макетов',
 								},
 								{
 									icon: 'psd',
@@ -157,7 +157,7 @@ section.section.materials
 							.materials__item_row
 								each subitem, index in item.subList
 									.materials__item_block
-										img.materials__item_img(src=`/images/${subitem.icon}.jpg`)
+										img.materials__item_img(src=`/images/${subitem.icon}.jpg` alt='icon')
 										.materials__item_block_text= subitem.descr
 
 			.slider_dots

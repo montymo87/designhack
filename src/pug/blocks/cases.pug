@@ -1,13 +1,15 @@
 section.section.cases
-	+picture({
-		class: 'cases__decor',
-		img_class: 'cases__decor_in',
-		img: `wave.png`,
-		alt: 'decor',
-	})
+	.cases__decor
+		img(src="images/wave_new.svg", alt="decor wave").cases__decor_in
+	//- +picture({
+	//- 	class: 'cases__decor',
+	//- 	img_class: 'cases__decor_in',
+	//- 	img: `wave.png`,
+	//- 	alt: 'decor',
+	//- })
 	.section_in.cases__in
-		h2.cases__title
-			.cases__title_in кейсы учеников
+		.cases__title
+			h2.cases__title_in кейсы учеников
 		.cases__slider_w
 			.slider_arrow--prev
 				.slider_arrow_icon
@@ -23,6 +25,7 @@ section.section.cases
 							num_a: '350',
 							num_b: '1250',
 							date: 'За первый месяц обучения',
+							insta: 'https://www.instagram.com/black__girl._k/',
 						},
 						{
 							name: 'кирилл<br> шаманаев',
@@ -31,6 +34,7 @@ section.section.cases
 							num_a: '300',
 							num_b: '905',
 							date: 'На 20 день обучения',
+							insta: 'https://www.instagram.com/shamanaev.kl/',
 						},
 						{
 							name: 'яна<br> абросимова',
@@ -39,6 +43,7 @@ section.section.cases
 							num_a: '0',
 							num_b: '1000',
 							date: 'На второй месяц после обучения',
+							insta: 'https://www.instagram.com/nesmeyana12/',
 						},
 						{
 							name: 'Дмитрий<br> душейко',
@@ -47,6 +52,7 @@ section.section.cases
 							num_a: '200',
 							num_b: '1000',
 							date: 'После обучения',
+							insta: 'https://www.instagram.com/dusheiko_d/',
 						},
 						{
 							name: 'кирилл<br> ЗАПУНЯКО',
@@ -55,6 +61,7 @@ section.section.cases
 							num_a: '0',
 							num_b: '400',
 							date: 'На второй месяц после обучения',
+							insta: 'https://www.instagram.com/kirill_zapun/',
 						},
 						{
 							name: 'Назар<br> Гуменюк',
@@ -63,6 +70,7 @@ section.section.cases
 							num_a: '150',
 							num_b: '400',
 							date: 'После обучения',
+							insta: 'https://www.instagram.com/humeniuk.design/',
 						},
 						{
 							name: 'Вадим<br> Емелин',
@@ -71,6 +79,7 @@ section.section.cases
 							num_a: '120',
 							num_b: '450',
 							date: 'Во время обучения',
+							insta: 'https://www.instagram.com/emelya_arts/',
 						},
 					]
 				each item, index in list
@@ -85,7 +94,7 @@ section.section.cases
 							.cases__item_info
 								.cases__info_row
 									.cases__item_name!= item.name
-									.cases__item_contact= item.con
+									a(href=`${item.insta}`).cases__item_contact= item.con
 								.cases__item_city= item.city
 								.cases__item_dot= `точка а - ${item.num_a}$ в месяц`
 								.cases__item_dot= `точка б - ${item.num_b}$ в месяц`

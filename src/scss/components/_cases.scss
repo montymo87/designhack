@@ -12,7 +12,32 @@
 }
 
 .cases__slider_w {
+	position: relative;
   min-height: 61.4rem;
+
+	&:after,
+	&:before {
+		position: absolute;
+		top: 50%;
+		z-index: -1;
+		display: block;
+		width: 30rem;
+		height: 30rem;
+		border-radius: 50%;
+		background-color: $blue;
+		filter: blur(5rem);
+		content: '';
+	}
+
+	&:after {
+		left: 0;
+		transform: translate(-15%, -50%);
+	}
+
+	&:before {
+		right: 0;
+		transform: translate(15%, -50%);
+	}
 }
 
 .cases__item {
@@ -147,16 +172,19 @@
 .cases__decor {
 	position: absolute;
 	left: 0;
-	top: 50%;
+	top: 0;
 
 	width: 100vw;
-	height: 100vh;
+	height: 200vh;
 
 	display: block;
+	pointer-events: none;
 }
 
 .cases__decor_in {
 	display: block;
 	width: 100%;
 	height: 100%;
+
+	object-fit: cover;
 }

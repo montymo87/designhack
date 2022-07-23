@@ -11,15 +11,11 @@ section.section.who
 		img: `blueEl.png`,
 		alt: 'decor',
 	})
-	+picture({
-		class: 'who__decor_3',
-		img_class: 'who__decor_in',
-		img: `wave.png`,
-		alt: 'decor',
-	})
+	.who__decor_3
+		img(src="images/wave_new.svg", alt="decor wave").who__decor_in
 	.section_in.who__in
-		h2.who__title
-			.who__title_in Для кого подойдет обучение
+		.who__title
+			h2.who__title_in Для кого подойдет обучение
 		ul.who__list
 			-
 				whoList = [
@@ -45,7 +41,7 @@ section.section.who
 				li.who__item
 					.who__item_in
 						.who__item_number
-							img.who__item_number_img(src=src=`images/who_num_${index}.png`)
+							img.who__item_number_img(src=`images/who_num_${index}.png` alt="number")
 						.who__item_title= item.title
 						.who__item_descr= item.descr
 						if item.info

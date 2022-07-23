@@ -35,6 +35,10 @@ export default class IndexPage {
 			triggers: document.querySelectorAll('.accordion__item_head'), // eslint-disable-line
 			activeStateName: 'accordion__item--active-mod' // eslint-disable-line
 		}).init();
+		const progAcc = new Accordion({
+			triggers: document.querySelectorAll('.program__item_acc_item_head'), // eslint-disable-line
+			activeStateName: 'program__item--active-mod' // eslint-disable-line
+		}).init();
 		Materials();
 	}
 

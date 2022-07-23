@@ -3,7 +3,7 @@ const buildSliders = (sliderClass) => {
 	if (sliders) {
 		sliders.forEach(slider => {
 			const el = slider;
-			const htmlStructure = `<div class="swiper-wrapper">${slider.innerHTML}</div>`;
+			const htmlStructure = `<ul class="swiper-wrapper">${slider.innerHTML}</div>`;
 			el.classList.add('swiper');
 			el.innerHTML = htmlStructure;
 			const slides = el.querySelector('.swiper-wrapper').children;

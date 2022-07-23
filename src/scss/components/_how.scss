@@ -8,11 +8,11 @@
 
 .how__image_col {
 	position: absolute;
-	right: 0;
-	top: 10rem;
+	left: 50%;
+	top: 50%;
 	z-index: -1;
-
-	width: 63%
+	margin: -42rem 0 0 -25rem;
+	width: 63%;
 }
 
 .how__title {
@@ -67,7 +67,7 @@
 
 	padding-left: 7.3rem;
 	margin-bottom: 3rem;
-	min-height: 5rem;
+	min-height: 6rem;
 }
 
 .how__icon {
@@ -89,16 +89,17 @@
 .how__info {
 	position: relative;
 
-	padding: 4rem 3.4rem;
+	padding: 3.6rem 3.4rem;
 }
 
 .how__info_descr {
-	max-width: 26rem;
+	max-width: 27rem;
 
-	font-weight: 600;
+	font-weight: 500;
 	font-size: 1.8rem;
-	list-style: 1.4;
+	line-height: 1.7;
 	color: $white;
+	text-transform: uppercase;
 }
 
 .how__info_bg {
