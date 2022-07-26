@@ -1,8 +1,17 @@
 @import 'ScssHelpers/_helpers_all.scss';
 
+.speakers {
+	@include bp($point_3) {
+		padding-bottom: 0;
+	}
+}
+
 .speakers__title {
 	@extend %global_flex_block_row_wrap_center_center;
-	margin-bottom: 12rem;
+
+	@include bp($point_2, min) {
+		margin-bottom: 12rem;
+	}
 }
 
 .speakers__title_in {
@@ -12,24 +21,48 @@
 }
 
 .speakers__row {
-	@extend %global_flex_block_row_wrap_flex-start_stretch;
+	@include bp($point_2, min) {
+		@include flex_block(row-reverse, wrap, flex-start, stretch);
+	}
 
-	margin-bottom: 8rem;
+	@include bp($point_2, min) {
+		margin-bottom: 8rem;
+	}
+	@include bp($point_3) {}
 }
 
 .speakers__col {
 	position: relative;
-	width: 50%;
+	@include bp($point_2, min) {
+		width: 50%;
+	}
+	@include bp($point_3) {
+		@include flex_block(column, wrap, center, center, center);
+
+		&:nth-child(2) {
+			margin-top: -16rem;
+		}
+	}
 }
 
 .speakers__img {
-	position: absolute;
-	top: 0;
-	right: 0;
-	margin: -18rem 5rem 0 0;
-	display: block;
-	width: 37vw;
-	height: auto;
+	@include bp($point_2, min) {
+		position: absolute;
+		top: 0;
+		right: 0;
+		margin: -18rem 5rem 0 0;
+		display: block;
+		width: 37vw;
+		height: auto;
+	}
+	@include bp($point_3) {
+		display: block;
+		// width: calc(100% + 6rem);
+		width: max(60vw, 42.8rem);
+		margin-left: -3rem;
+		height: auto;
+		transform: translate(-2rem, -3rem);
+	}
 }
 
 .speakers__img_in {
@@ -42,36 +75,67 @@
 	@extend %global_flex_block_column_wrap_center_center;
 	position: absolute;
 	top: 0;
-	right: 0;
-	margin: 47rem 28rem 0 0;
+
+	@include bp($point_2, min) {
+		right: -100%;
+		margin: 47rem 28rem 0 0;
+	}
+	@include bp($point_3) {
+    right: 50%;
+    margin: -7.4rem -7rem 0 0;
+	}
 }
 
 .speakers__col_title {
-	margin-bottom: 2.4rem;
-
 	color: $white;
-	font-size: 8rem;
+
 	font-family: $font_2;
 	line-height: 1;
 
-	span {
-		display: inline-block;
-		max-width: 15rem;
-		margin-left: 2.4rem;
+	@include bp($point_2, min) {
+		margin-bottom: 2.4rem;
+		font-size: 8rem;
+	}
+	@include bp($point_3) {
+		margin-bottom: 3.8rem;
+		font-size: 5rem;
+		text-align: center;
+	}
 
+	span {
 		font-family: $font_1;
-		font-weight: 500;
 		color: #FFF09F;
-		font-size: 2rem;
+
 		line-height: 1.5;
 		text-transform: uppercase;
+
+		@include bp($point_2, min) {
+			display: inline-block;
+			margin-left: 2.4rem;
+			max-width: 15rem;
+			font-size: 2rem;
+			font-weight: 500;
+		}
+		@include bp($point_3) {
+			display: block;
+			font-size: 1.2rem;
+			font-weight: 600;
+			text-align: center;
+		}
 	}
 }
 
 .speakers__list {
-	padding-left: 3.5rem;
 	max-width: 42rem;
-	margin-bottom: 7.2rem;
+
+	@include bp($point_2, min) {
+		margin-bottom: 7.2rem;
+		padding-left: 3.5rem;
+	}
+	@include bp($point_3) {
+		padding-left: 3rem;
+		margin-bottom: 3.2rem;
+	}
 }
 
 .speakers__item {
@@ -79,32 +143,42 @@
 
 	margin-bottom: 1.4rem;
 	color: $white;
-	font-size: 2rem;
 	line-height: 1.7;
 	font-weight: 400;
 
+	@include bp($point_2, min) {
+		font-size: 2rem;
+	}
+	@include bp($point_3) {
+		font-size: 1.4rem;
+	}
+
 	&:after {
 		position: absolute;
-		left: -3.5rem;
-		top: .8rem;
 		display: block;
-
-		width: 1.5rem;
-		height: 1.5rem;
 		background: url('../../images/checkbox.png') no-repeat center center / 100% 100%;
 
 		content: '';
+
+		@include bp($point_2, min) {
+			left: -3.5rem;
+			top: .8rem;
+			width: 1.5rem;
+			height: 1.5rem;
+		}
+		@include bp($point_3) {
+			left: -3rem;
+			top: .5rem;
+			width: 1.2rem;
+			height: 1.2rem;
+		}
 	}
 }
 
 .speakers__info {
 	position: relative;
 	max-width: 50.8rem;
-	padding: 4.2rem 3.5rem 3.3rem;
 
-	font-size: 1.5rem;
-	font-weight: 1.4;
-	line-height: 1.5;
 	color: $white;
 
 	background: linear-gradient(67.83deg, rgba(182, 182, 182, 0.1) 3.52%, rgba(39, 39, 39, 0.1) 99.38%);
@@ -116,47 +190,95 @@
 	.speakers__info_decor {
 		position: absolute;
 		top: 0;
-		width: 2.4rem;
-		height: 2.4rem;
-
 		background: url('../../images/flag.png') no-repeat center center / 100% 100%;
+
+		@include bp($point_2, min) {
+			width: 2.4rem;
+			height: 2.4rem;
+		}
+		@include bp($point_3) {
+			width: 1.6rem;
+			height: 1.6rem;
+		}
+	}
+
+	@include bp($point_2, min) {
+		padding: 4.2rem 3.5rem 3.3rem;
+		font-size: 1.5rem;
+		line-height: 1.5;
+	}
+	@include bp($point_3) {
+		padding: 2.8rem 2.5rem 3.3rem 2.8rem;
+		font-size: 1.4rem;
+		line-height: 1.42;
 	}
 }
 
 //------------------------------ ROW
 
 .speakers__row_speakers {
-	@extend %global_flex_block_row_wrap_flex-start_stretch;
+	// @extend %global_flex_block_row_wrap_flex-start_stretch;
+
+	@include bp($point_2, min) {
+		@include flex_block(row, wrap, flex-start, stretch);
+	}
 }
 
 .speakers__col_speakers {
 	position: relative;
-	width: 50%;
-	min-height: 80rem;
 
-	&:nth-child(2) {
-		padding-left: 8rem
+	@include bp($point_2, min) {
+		width: 50%;
+		min-height: 80rem;
+
+		&:nth-child(2) {
+			padding-left: 8rem
+		}
+	}
+	@include bp($point_3) {
+		// width: 50%;
+		// min-height: 80rem;
 	}
 }
 
 .speakers__card {
-	@extend %global_flex_block_column_wrap_flex-start;
-
-	padding-top: 48rem;
 	height: 100%;
+
+	@include bp($point_2, min) {
+		@include flex_block(column, wrap, flex-start);
+		padding-top: 48rem;
+	}
+	@include bp($point_3) {
+		@include flex_block(column, wrap, center, center, center);
+	}
 }
 
 .speakers__card_img {
-	position: absolute;
-	top: -10rem;
-	left: -26rem;
 	display: block;
-	width: 146%;
-	height: 131%;
 
 	.speakers__col_speakers:nth-child(2) & {
 		top: -9rem;
     left: -25rem;
+	}
+
+	@include bp($point_2, min) {
+		position: absolute;
+		top: -10rem;
+		left: -26rem;
+		width: 146%;
+		height: 131%;
+	}
+
+	// @media (min-width: $point_4) and (max-width: $point_3) {
+	// 	width: 50vw;
+	// 	margin: 0 auto;
+	// }
+
+	@include bp($point_3) {
+		// width: calc(100% + 9rem);
+		width: max(50vw, 42.8rem);
+		height: auto;
+		margin-left: -4.5rem;
 	}
 }
 
@@ -172,18 +294,24 @@
 	position: relative;
 	max-width: 36rem;
 
-	margin-bottom: 3rem;
-	padding-right: 15rem;
-
 	font-family: $font_2;
-	font-size: 6rem;
 	color: $white;
 	line-height: 1;
+
+	@include bp($point_2, min) {
+		margin-bottom: 3rem;
+		padding-right: 15rem;
+		font-size: 6rem;
+	}
+	@include bp($point_3) {
+		margin-bottom: 2.7rem;
+		padding-right: 15rem;
+		font-size: 4rem;
+	}
 
 	span {
 		position: absolute;
 		top: 0;
-		right: -3.2rem;
 		display: block;
 		max-width: 16rem;
 		margin-left: 1rem;
@@ -191,49 +319,91 @@
 		font-family: $font_1;
 		font-weight: 500;
 		color: #FFF09F;
-		font-size: 2rem;
+
 		line-height: 1.5;
 		text-transform: uppercase;
 
-		.speakers__col_speakers:nth-child(1) & {
-			top: 1.7rem;
-    	right: 8.6rem;
+		@include bp($point_2, min) {
+			font-size: 2rem;
+			right: -3.2rem;
+
+			.speakers__col_speakers:nth-child(1) & {
+				top: 1.7rem;
+				right: 8.6rem;
+			}
+
+		}
+
+		@include bp($point_3) {
+			right: 4rem;
+			font-size: 1.2rem;
+
+			.speakers__col_speakers:nth-child(1) & {
+		    top: 1.2rem;
+    		right: 15.6rem;
+			}
+
 		}
 	}
 }
 
 .speakers__card_list {
-	padding-left: 3.6rem;
 	max-width: 47rem;
 	margin-bottom: 4.2rem;
+
+	@include bp($point_2, min) {
+		padding-left: 3.6rem;
+	}
+
+	@include bp($point_3) {
+		padding-left: 2.6rem;
+	}
 }
 
 .speakers__card_item {
 	position: relative;
 
-	margin-bottom: 1rem;
 	color: $white;
-	font-size: 1.5rem;
 	line-height: 1.7;
-	font-weight: 400;
+
+	&:last-child {
+		margin-bottom: 0;
+	}
 
 	&:after {
 		position: absolute;
-		left: -3.2rem;
-		top: .3rem;
 		display: block;
-
-		width: 1.5rem;
-		height: 1.5rem;
 		background: url('../../images/checkbox_gray.png') no-repeat center center / 100% 100%;
 
 		content: '';
+
+		@include bp($point_2, min) {
+			top: .3rem;
+			left: -3.2rem;
+			width: 1.5rem;
+			height: 1.5rem;
+		}
+
+		@include bp($point_3) {
+			top: .5rem;
+			left: -2.4rem;
+			width: 1.2rem;
+			height: 1.2rem;
+		}
+	}
+
+	@include bp($point_2, min) {
+		margin-bottom: 1rem;
+		font-size: 1.5rem;
+	}
+
+	@include bp($point_3) {
+		margin-bottom: 2rem;
+		font-size: 1.4rem;
 	}
 }
 
 .speakers__col_contact {
-	padding: 1.8rem 4.4rem;
-	font-size: 2rem;
 	color: $white;
 	background: linear-gradient(67.83deg, rgba(200, 200, 200, 0.2) 3.52%, rgba(86, 86, 86, 0.2) 99.38%);
 	backdrop-filter: blur(1rem);
@@ -242,32 +412,60 @@
 	&:hover {
 		text-decoration: none;
 	}
+
+	@include bp($point_2, min) {
+		padding: 1.8rem 4.4rem;
+		font-size: 2rem;
+	}
+	@include bp($point_3) {
+		padding: 1rem 2.6rem;
+		font-size: 1.4rem;
+	}
 }
 
 .speakers__col_num {
 	position: relative;
 	z-index: 1;
-	padding: .8rem 2rem;
+
 	border-radius: 8rem;
 	background-color: $blue;
 	color: $white;
-	font-size: 1.4rem;
+
 	line-height: 1;
 
 	box-shadow: 3px 3px 1.5rem 0px rgba(51, 34, 248, .75);
 	transform: translateY(37%);
+
+	@include bp($point_2, min) {
+		padding: .8rem 2rem;
+		font-size: 1.4rem;
+	}
+	@include bp($point_3) {
+		padding: .5rem 1.5rem;
+		font-size: 1rem;
+	}
 }
 
 .speakers__decor_img {
 	position: absolute;
-	top: -30%;
-	left: -35rem;
-
+	z-index: -1;
 	display: block;
-
-	width: 126rem;
-	height: 80rem;
 	transform: rotate(9deg);
+	pointer-events: none;
+	opacity: .7;
+
+	@include bp($point_2, min) {
+		top: -30%;
+		left: -35rem;
+		width: 126rem;
+		height: 80rem;
+	}
+	@include bp($point_3) {
+		top: -19%;
+    left: -14rem;
+    width: 71rem;
+    height: 64rem;
+	}
 }
 
 .speakers__decor_img_in {
@@ -276,19 +474,31 @@
 
 .speakers__card_decor_img {
 	position: absolute;
-	top: -23%;
-	left: -30rem;
+	z-index: -1;
 
 	display: block;
-
-	width: 104rem;
-	height: 104rem;
 	border-radius: 50%;
-	transform: rotate(53deg);
+	pointer-events: none;
 
 	.speakers__row_speakers .speakers__col_speakers:nth-child(2) & {
 		top: -7%;
 		left: -15rem;
+	}
+
+	@include bp($point_2, min) {
+		top: -23%;
+		left: -30rem;
+		width: 104rem;
+		height: 104rem;
+		transform: rotate(53deg);
+	}
+
+	@include bp($point_3) {
+		top: 2%;
+    left: -23rem;
+		width: 82rem;
+    height: 56rem;
+		transform: rotate(-54deg);
 	}
 }
 
@@ -296,4 +506,10 @@
 	display: block;
 	width: 100%;
 	height: 100%;
+}
+
+.speakers__card_content {
+	@include bp($point_3) {
+		margin-top: -22rem;
+	}
 }

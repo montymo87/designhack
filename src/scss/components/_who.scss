@@ -34,6 +34,7 @@
 	@extend %h2;
 
 	text-align: center;
+	line-height: 1.2;
 }
 
 .who__list {
@@ -82,6 +83,7 @@
 }
 
 .who__item_number {
+	display: block;
 	position: absolute;
 	top: 0;
 
@@ -202,6 +204,10 @@
 	width: 100vw;
 	height: 200vh;
 	pointer-events: none;
+
+	@include bp($point_3) {
+		display: none;
+	}
 }
 
 .who__decor_in {

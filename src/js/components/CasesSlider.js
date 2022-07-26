@@ -1,4 +1,4 @@
-import Swiper, { Navigation, Pagination } from 'swiper';
+import Swiper, { Navigation } from 'swiper';
 import 'swiper/css';
 // import 'swiper/scss/scrollbar';
 import buildSliders from './buildSwiper';
@@ -11,21 +11,26 @@ const CasesSlider = () => {
 
 	if (typeof (slideEl) !== 'undefined' && slideEl != null) {
 		let sliderEl = new Swiper(sliderClass, {
-			modules: [Navigation, Pagination],
+			modules: [Navigation],
 			observer: true,
 			observeParents: true,
 			speed: 800,
-			slidesPerView: 3,
 			spaceBetween: 30,
 			// loop: true,
 			navigation: {
 				prevEl: '.slider_arrow--prev',
 				nextEl: '.slider_arrow--next',
 			},
-			pagination: {
-				el: '.slider_dots',
-				type: 'bullets',
-				clickable: true,
+			breakpoints: {
+				320: {
+					slidesPerView: 1,
+				},
+				768: {
+					slidesPerView: 2,
+				},
+				1024: {
+					slidesPerView: 3,
+				},
 			},
 
 		});

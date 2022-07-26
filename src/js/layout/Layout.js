@@ -14,7 +14,6 @@ export default class Layout {
 	}
 
 	loadFunc() {
-		console.log('layout load');
 		calcViewportHeight();
 	}
 

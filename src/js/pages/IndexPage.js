@@ -11,7 +11,6 @@ import Price from 'components/Price';
 import Speakers from 'components/Speakers';
 import Cases from 'components/Cases';
 import Faq from 'components/Faq';
-import Accordion from 'components/accordion';
 import Materials from 'components/Materials';
 
 export default class IndexPage {
@@ -20,7 +19,6 @@ export default class IndexPage {
 	}
 
 	loadFunc() {
-		console.log('index page load');
 		Hero();
 		Why();
 		Who();
@@ -31,14 +29,6 @@ export default class IndexPage {
 		Speakers();
 		Cases();
 		Faq();
-		const acc = new Accordion({
-			triggers: document.querySelectorAll('.accordion__item_head'), // eslint-disable-line
-			activeStateName: 'accordion__item--active-mod' // eslint-disable-line
-		}).init();
-		const progAcc = new Accordion({
-			triggers: document.querySelectorAll('.program__item_acc_item_head'), // eslint-disable-line
-			activeStateName: 'program__item--active-mod' // eslint-disable-line
-		}).init();
 		Materials();
 	}
 

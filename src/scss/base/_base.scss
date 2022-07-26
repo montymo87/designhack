@@ -9,13 +9,15 @@
 
 	--height-header: 12.5rem;
 	--height-footer: 10rem;
-	--program_indent: 3.8rem;
+
 
 	@include bp($point_2, min) {
 		--gl-indent: 2rem;
+		--program_indent: 3.8rem;
 	}
 	@include bp($point_3) {
 		--gl-indent: 4.5rem;
+		--program_indent: 2.8rem;
 	}
 
 }
@@ -35,14 +37,18 @@ html {
 		font: 400 calc(100vw / 1200 * 10)/1.33 $font_1;
 	}
 
-	@include bp($point_3) {
-		font: 400 10px/1.33 $font_1;
+	// @include bp($point_3) {
+	// 	font: 400 10px/1.33 $font_1;
 		// font: 400 calc(100vw / 428 * 10)/1.33 $font_1;
+	// }
+
+	@media (min-width: 428px) and (max-width: 1023px) {
+		font: 400 10px/1.33 $font_1;
 	}
 
-	// @media (min-width: 1024px) and (max-width: 1023px) {
-	// 	font: 400 calc(100vw / 1200 * 10)/1.33 $font_1;
-	// }
+	@include bp(427px) {
+		font: 400 calc(100vw / 428 * 10)/1.33 $font_1;
+	}
 
 	scroll-behavior: smooth;
 }

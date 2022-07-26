@@ -3,9 +3,14 @@
 	position: relative;
 
 	width: 100%;
-
 	font-size: 1rem;
-	padding: 6.6rem var(--gl-indent);
+
+	@include bp($point_2, min) {
+		padding: 6.6rem var(--gl-indent);
+	}
+	@include bp($point_3) {
+		padding: 3.5rem var(--gl-indent);
+	}
 }
 
 .section_in {

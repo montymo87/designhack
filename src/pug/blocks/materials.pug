@@ -150,15 +150,42 @@ section.section.materials
 								},
 							]
 						},
+						{
+							subList: [
+								{
+									icon: 'n',
+									descr: 'Шаблон для управления дизайн-проектами',
+								},
+								{
+									icon: 't',
+									descr: 'Сервисы для генерации нейминга',
+								},
+								{
+									icon: 'n',
+									descr: 'Инструкция по выбору и проверке доменного имени',
+								},
+							]
+						},
+						{
+							subList: [
+								{
+									icon: 'n',
+									descr: 'Инструкция “Как открыть ФЛП”',
+								},
+								{
+									icon: 'd',
+									descr: 'Mindmap по бизнес процессам в студии',
+								},
+							]
+						},
 					]
 				each item, index in list
-					.materials__item
+					li.materials__item
 						.materials__item_in
 							.materials__item_row
 								each subitem, index in item.subList
 									.materials__item_block
-										img.materials__item_img(src=`/images/${subitem.icon}.jpg` alt='icon')
+										img.materials__item_img(src=`/images/${subitem.icon}.jpg` alt='icon' loading="lazy")
 										.materials__item_block_text= subitem.descr
-
 			.slider_dots
 

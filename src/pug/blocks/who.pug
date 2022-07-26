@@ -4,15 +4,24 @@ section.section.who
 		img_class: 'who__decor_in',
 		img: `whiteEl.png`,
 		alt: 'decor',
+		loading: 'lazy',
 	})
 	+picture({
 		class: 'who__decor_2',
 		img_class: 'who__decor_in',
 		img: `blueEl.png`,
 		alt: 'decor',
+		loading: 'lazy',
 	})
-	.who__decor_3
-		img(src="images/wave_new.svg", alt="decor wave").who__decor_in
+	+picture({
+		class: 'who__decor_3',
+		img_class: 'who__decor_in',
+		img: `wave.png`,
+		alt: 'decor',
+		loading: 'lazy',
+	})
+	//- .who__decor_3
+	//- 	img(src="images/wave.png", alt="decor wave" loading="lazy").who__decor_in
 	.section_in.who__in
 		.who__title
 			h2.who__title_in Для кого подойдет обучение
@@ -40,8 +49,15 @@ section.section.who
 			each item, index in whoList
 				li.who__item
 					.who__item_in
-						.who__item_number
-							img.who__item_number_img(src=`images/who_num_${index}.png` alt="number")
+						+picture({
+							class: 'who__item_number',
+							img_class: 'who__item_number_img',
+							img: `who_num_${index}.png`,
+							alt: 'number',
+							loading: 'lazy',
+						})
+						//- .who__item_number
+						//- 	img.who__item_number_img(src=`images/who_num_${index}.png` alt="number" loading="lazy")
 						.who__item_title= item.title
 						.who__item_descr= item.descr
 						if item.info

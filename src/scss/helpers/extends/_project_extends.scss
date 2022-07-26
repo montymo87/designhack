@@ -14,40 +14,6 @@
 	object-fit: contain;
 }
 
-// %curved_btn {
-// 	position: relative;
-
-// 	&:after,
-// 	&::before {
-// 		position: absolute;
-// 		top: 5%;
-// 		z-index: -1;
-// 		display: block;
-// 		width: 2.2rem;
-// 		height: 90%;
-
-// 		border-radius: 30%;
-// 		background-color: #3322F8;
-// 		transition: background-color ease .3s;
-// 		content: '';
-// 	}
-
-	// &:after {
-	// 	left: 0;
-	// 	transform: translate(-20%, 0);
-	// }
-
-	// &:before {
-	// 	right: 0;
-	// 	transform: translate(20%, 0);
-	// }
-
-	// &:hover:after,
-	// &:hover:before {
-	// 	background-color: #3d2bfc;
-	// }
-// }
-
 %gradient_txt {
 	display: inline-block;
 	background: linear-gradient($gradient);
@@ -60,7 +26,7 @@
 
 	font-family: $font_2;
 	text-align: center;
-	line-height: 1;
+	line-height: 1.17;
 
 	@include bp($point_2, min) {
 		font-size: 8rem;

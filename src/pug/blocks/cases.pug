@@ -1,12 +1,12 @@
 section.section.cases
-	.cases__decor
-		img(src="images/wave_new.svg", alt="decor wave").cases__decor_in
-	//- +picture({
-	//- 	class: 'cases__decor',
-	//- 	img_class: 'cases__decor_in',
-	//- 	img: `wave.png`,
-	//- 	alt: 'decor',
-	//- })
+	//- .cases__decor
+	//- 	img(src="images/wave_new.svg", alt="decor wave" loading="lazy").cases__decor_in
+	+picture({
+		class: 'cases__decor',
+		img_class: 'cases__decor_in',
+		img: `wave.png`,
+		alt: 'decor',
+	})
 	.section_in.cases__in
 		.cases__title
 			h2.cases__title_in кейсы учеников
@@ -74,7 +74,7 @@ section.section.cases
 						},
 						{
 							name: 'Вадим<br> Емелин',
-							con: '@humeniuk.design',
+							con: '@emelya_arts',
 							city: 'Киев',
 							num_a: '120',
 							num_b: '450',
@@ -90,11 +90,12 @@ section.section.cases
 								img_class: 'cases__item_img_in',
 								img: `cases_${index}.jpg`,
 								alt: 'people',
+								loading: 'auto',
 							})
 							.cases__item_info
 								.cases__info_row
 									.cases__item_name!= item.name
-									a(href=`${item.insta}`).cases__item_contact= item.con
+									a(href=`${item.insta}` target='_blank').cases__item_contact= item.con
 								.cases__item_city= item.city
 								.cases__item_dot= `точка а - ${item.num_a}$ в месяц`
 								.cases__item_dot= `точка б - ${item.num_b}$ в месяц`

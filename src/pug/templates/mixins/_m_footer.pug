@@ -6,7 +6,9 @@ mixin footer
 					a(href="#").footer__logo
 						img.footer__logo_in(src="images/logo.svg" alt="logo")
 				.footer__col
-					.footer__question Остались вопросы? Жмите на кнопку и мой менеджер расскажет вам все детали
+					.footer__question Остались вопросы? #[br] Жмите на кнопку и мой менеджер расскажет вам все детали
+					.footer__btn_w.footer__btn_w--mobile_mod
+						a(href="https://t.me/alexx_fisher94").footer__telega_btn #[img(src='images/teleg.png' loading="lazy" alt='icon telegram')] Телеграм
 			.footer__row
 				.footer__col
 					.footer__links
@@ -14,4 +16,4 @@ mixin footer
 						a(href="#").footer__link.footer__link--serv Условия оказания услуг
 				.footer__col
 					.footer__btn_w
-						a(href="https://t.me/alexx_fisher94").footer__telega_btn #[img(src='images/teleg.png' alt='icon telegram')] Телеграм
+						a(href="https://t.me/alexx_fisher94" target="_blank").footer__telega_btn #[img(src='images/teleg.png' loading="lazy" alt='icon telegram')] Телеграм

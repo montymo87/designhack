@@ -32,6 +32,7 @@
 
 .header__info {
 	margin-left: auto;
+	margin-top: -.5rem
 	// overflow: hidden;
 }
 
@@ -82,7 +83,7 @@
 
 .header__date_icon {
 	position: absolute;
-	top: 0;
+	top: .7rem;
 	left: 0;
 
 	@include bp($point_2, min) {
@@ -93,10 +94,6 @@
 		width: 1.6rem;
 		height: 1.6rem;
 	}
-}
-
-.header__date_icon {
-	// position: relative;
 
 	&::after {
 		position: absolute;
@@ -119,11 +116,35 @@
 	}
 }
 
+// .header__date_icon {
+// 	// position: relative;
+
+// 	&::after {
+// 		position: absolute;
+// 		top: -.5rem;
+// 		left: -.9rem;
+// 		display: block;
+
+// 		background-color: $blue;
+// 		border-radius: 50%;
+// 		filter: blur(10px);
+// 		content: '';
+// 		@include bp($point_2, min) {
+// 			width: 2.1rem;
+// 			height: 2.1rem;
+// 		}
+// 		@include bp($point_3) {
+// 			width: 1.2rem;
+// 			height: 1.2rem;
+// 		}
+// 	}
+// }
+
 .header__date_title {
   display: inline-block;
 
 	font-family: $font_2;
-	line-height: 1;
+	line-height: 1.2;
 
 	background: linear-gradient($gradient);
   -webkit-background-clip: text;

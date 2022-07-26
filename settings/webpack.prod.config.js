@@ -51,7 +51,7 @@ module.exports = merge(webpackConfiguration, {
 					{
 						test: /\.(jpe?g|png)/,
 						options: {
-							quality: 70,
+							quality: 88,
 						},
 					},
 				],
@@ -67,7 +67,7 @@ module.exports = merge(webpackConfiguration, {
 					options: {
 						encodeOptions: {
 							mozjpeg: {
-								quality: 75,
+								quality: 88,
 							},
 							oxipng: {
 								level: 4,

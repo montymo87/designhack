@@ -1,23 +1,44 @@
 @import 'ScssHelpers/_helpers_all.scss';
 
 %descr_text {
-	font-weight: 400;
-	font-size: 2rem;
-	line-height: 1.5;
+	@include bp($point_2, min) {
+		font-weight: 400;
+		font-size: 2rem;
+		line-height: 1.5;
+	}
+	@include bp($point_3) {
+		font-weight: 400;
+		font-size: 1.5rem;
+		line-height: 1.42;
+	}
 }
 
 .how__image_col {
-	position: absolute;
-	left: 50%;
-	top: 50%;
-	z-index: -1;
-	margin: -42rem 0 0 -25rem;
-	width: 63%;
+
+	@include bp($point_2, min) {
+		position: absolute;
+		left: 50%;
+		top: 50%;
+		z-index: -1;
+		width: 63vw;
+		margin: -42rem 0 0 -25rem;
+	}
+	@include bp($point_3) {
+		width: calc(100% + var(--gl-indent) * 2);
+		margin-left: -4.5rem;
+		height: auto;
+	}
 }
 
 .how__title {
 	@extend %global_flex_block_row_wrap_center_center;
-	margin-bottom: 10.2rem;
+
+	@include bp($point_2, min) {
+		margin-bottom: 10.2rem;
+	}
+	@include bp($point_3) {
+		margin-bottom: 1.2rem;
+	}
 }
 
 .how__title_in {
@@ -58,7 +79,13 @@
 
 .how__list {
 	max-width: 40rem;
-	margin-bottom: 8rem;
+
+	@include bp($point_2, min) {
+		margin-bottom: 8rem;
+	}
+	@include bp($point_3) {
+		margin-bottom: 6rem;
+	}
 }
 
 .how__item {
@@ -66,8 +93,14 @@
 	position: relative;
 
 	padding-left: 7.3rem;
-	margin-bottom: 3rem;
 	min-height: 6rem;
+
+	@include bp($point_2, min) {
+		margin-bottom: 3rem;
+	}
+	@include bp($point_3) {
+		margin-bottom: 1rem;
+	}
 }
 
 .how__icon {
@@ -78,6 +111,15 @@
 	display: block;
 	width: 5rem;
 	height: 5rem;
+
+	@include bp($point_2, min) {
+		left: 0;
+		top: 0;
+	}
+	@include bp($point_3) {
+		left: 0;
+		top: .5rem;
+	}
 }
 
 .how__descr {
@@ -89,17 +131,30 @@
 .how__info {
 	position: relative;
 
-	padding: 3.6rem 3.4rem;
+	@include bp($point_2, min) {
+		padding: 3.6rem 3.4rem;
+	}
+	@include bp($point_3) {
+		padding: 4.2rem 9.4rem 2.4rem 2.4rem;
+	}
 }
 
 .how__info_descr {
 	max-width: 27rem;
 
-	font-weight: 500;
-	font-size: 1.8rem;
-	line-height: 1.7;
 	color: $white;
 	text-transform: uppercase;
+
+	@include bp($point_2, min) {
+		font-size: 1.8rem;
+		line-height: 1.7;
+		font-weight: 500;
+	}
+	@include bp($point_3) {
+		font-size: 1.3rem;
+		line-height: 1.5;
+		font-weight: 600;
+	}
 }
 
 .how__info_bg {
@@ -122,25 +177,42 @@
 .how__info_icon {
 	position: absolute;
 	z-index: 2;
-	top: -1.1rem;
-	left: 5rem;
-	width: 2.2rem;
-	height: 2.2rem;
 
 	&:after {
 		position: absolute;
 		z-index: -1;
-		left: -1.6rem;
-		top: -1.6rem;
 		display: block;
-
-		width: 5.3rem;
-		height: 5.3rem;
 		border-radius: 50%;
-
 		background: linear-gradient(67.83deg, rgba(182, 182, 182, 0.1) 3.52%, rgba(39, 39, 39, 0.1) 99.38%);
 		backdrop-filter: blur(2rem);
-
 		content: '';
+
+		@include bp($point_2, min) {
+			left: -1.6rem;
+			top: -1.6rem;
+			width: 5.3rem;
+			height: 5.3rem;
+		}
+
+		@include bp($point_3) {
+			left: -1.2rem;
+			top: -1.4rem;
+			width: 4.1rem;
+			height: 4.1rem;
+		}
+	}
+
+	@include bp($point_2, min) {
+		top: -1.1rem;
+		left: 5rem;
+		width: 2.2rem;
+		height: 2.2rem;
+	}
+
+	@include bp($point_3) {
+		top: -.5rem;
+		left: 3.5rem;
+		width: 1.6rem;
+		height: 1.6rem;
 	}
 }

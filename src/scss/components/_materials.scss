@@ -2,7 +2,12 @@
 
 .materials__title {
 	@extend %global_flex_block_row_wrap_center_center;
-	margin-bottom: 7rem;
+	@include bp($point_2, min) {
+		margin-bottom: 7rem;
+	}
+	@include bp($point_3) {
+		margin-bottom: 3rem;
+	}
 }
 
 .materials__title_in {
@@ -25,38 +30,62 @@
 }
 
 .materials__item_block {
-	@extend %global_flex_block_row_wrap_flex-start_center;
+	@include bp($point_2, min) {
+		@include flex_block(row, wrap, flex-start, center, center);
+	}
+	@include bp($point_3) {
+		@include flex_block(column, wrap, flex-start, flex-start, flex-start);
+		max-width: 13rem;
+		width: 100%;
+	}
 }
 
 .materials__item_img {
 	display: block;
-	width: 6.6rem;
-	height: 6.6rem;
-	margin-right: 2.2rem;
 	margin-bottom: auto;
 
 	overflow: hidden;
 	border-radius: .6rem;
+
+	@include bp($point_2, min) {
+		margin-right: 2.2rem;
+		width: 6.6rem;
+		height: 6.6rem;
+	}
+	@include bp($point_3) {
+		margin-bottom: 2rem;
+		width: 4.6rem;
+		height: 4.6rem;
+	}
 }
 
 .materials__item_block_text {
 	max-width: 28rem;
-	font-size: 2rem;
 	line-height: 1.5;
 	color: $white;
+	@include bp($point_2, min) {
+		font-size: 2rem;
+	}
+	@include bp($point_3) {
+		font-size: 1rem;
+	}
 }
 
 .slider_dots {
 	@extend %global_flex_block_row_wrap_center_center;
 
-	margin-top: 8rem;
-	gap: 1.2rem;
+	@include bp($point_2, min) {
+		gap: 1.2rem;
+		margin-top: 8rem;
+	}
+
+	@include bp($point_3) {
+		gap: .8rem;
+		margin-top: 4rem;
+	}
 }
 
 .swiper-pagination-bullet {
-	width: 1rem;
-	height: 1rem;
-
 	border-radius: 50%;
 	background-color: $white;
 	transition: background-color ease .3s;
@@ -64,5 +93,15 @@
 
 	&.swiper-pagination-bullet-active {
 		background-color: $blue;
+	}
+
+	@include bp($point_2, min) {
+		width: 1rem;
+		height: 1rem;
+	}
+
+	@include bp($point_3) {
+		width: .5rem;
+		height: .5rem;
 	}
 }

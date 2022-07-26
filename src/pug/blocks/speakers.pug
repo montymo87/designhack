@@ -4,7 +4,22 @@ section.section.speakers
 			h2.speakers__title_in спикеры программы
 		.speakers__row
 			.speakers__col
-				.speakers__col_title Алекс Фишер
+					+picture({
+						class: 'speakers__decor_img',
+						img_class: 'speakers__decor_img_in',
+						img: 'blueEl.png',
+						alt: 'decor',
+						loading: 'lazy',
+					})
+					+picture({
+						class: 'speakers__img',
+						img_class: 'speakers__img_in',
+						img: 'speaker.png',
+						alt: 'speaker',
+						loading: 'lazy',
+					})
+			.speakers__col
+				h4.speakers__col_title Алекс Фишер
 					span автор программы
 				ul.speakers__list
 					-
@@ -13,23 +28,10 @@ section.section.speakers
 						li.speakers__item= item
 				.speakers__info Сотрудничаю с топами инфобизнеса и лучшими Digital агентствами страны среди которых: команда Дмитрия Карпачева, маркетологи Маргулана Сейсембаева, Артем Визарт, Олег Спартак, Тарас Левчик, Leeloo.ai, Vizart Events, Club 300 spartans и другие
 					.speakers__info_decor
-			.speakers__col
-				+picture({
-					class: 'speakers__decor_img',
-					img_class: 'speakers__decor_img_in',
-					img: 'blueEl.png',
-					alt: 'decor',
-				})
-				+picture({
-					class: 'speakers__img',
-					img_class: 'speakers__img_in',
-					img: 'speaker.png',
-					alt: 'speaker',
-				})
 
 				.speakers__col_info
 					.speakers__col_num 6050k+
-					a.speakers__col_contact(href='https://www.instagram.com/alexx.fisher/') @alexx.fisher
+					a.speakers__col_contact(href='https://www.instagram.com/alexx.fisher/' target='_blank') @alexx.fisher
 		.speakers__row_speakers
 			.speakers__col_speakers
 				.speakers__card
@@ -38,17 +40,22 @@ section.section.speakers
 						img_class: 'speakers__card_decor_img_in',
 						img: 'whiteEl.png',
 						alt: 'decor',
+						loading: 'lazy',
 					})
 					+picture({
 						class: 'speakers__card_img',
 						img_class: 'speakers__card_img_in',
 						img: `speaker_1.png`,
+						media: 1024,
+						img_mob: 'kirill_mob.png',
 						alt: 'speaker',
+						loading: 'lazy',
 					})
-					h3.speakers__card_title Кирилл #[br] Романцов #[span upwork]
-					ul.speakers__card_list
-						each item in ['5 лет в продажах (3.5 года сфокусирован на Зарубежном рынке)','$184 000 USD  – рекордный чек','С 2017 по 2020 –  CEO компании MOJAM, которая ','за 3 года выросла с 3 до 45 человек','Больше года обучает продажам на зарубежный рынок']
-							li.speakers__card_item= item
+					.speakers__card_content
+						h3.speakers__card_title Кирилл #[br] Романцов #[span upwork]
+						ul.speakers__card_list
+							each item in ['5 лет в продажах (3.5 года сфокусирован на Зарубежном рынке)','$184 000 USD  – рекордный чек','С 2017 по 2020 –  CEO компании MOJAM, которая ','за 3 года выросла с 3 до 45 человек','Больше года обучает продажам на зарубежный рынок']
+								li.speakers__card_item= item
 			.speakers__col_speakers
 				.speakers__card
 					+picture({
@@ -56,14 +63,19 @@ section.section.speakers
 						img_class: 'speakers__card_decor_img_in',
 						img: 'whiteEl.png',
 						alt: 'decor',
+						loading: 'lazy',
 					})
 					+picture({
 						class: 'speakers__card_img',
 						img_class: 'speakers__card_img_in',
 						img: `speaker_2.png`,
+						media: 1024,
+						img_mob: 'vitalya_mob.png',
 						alt: 'speaker',
+						loading: 'lazy',
 					})
-					h3.speakers__card_title Виталий #[br] вальков #[span построение команды]
-					ul.speakers__card_list
-						each item in ['Основатель палтформы для творческих CREO','Основатель студии дизайна Creo-agency','Создал более чем 1000 логотипов','Работал с клиентами с более чем 20 стран мира']
-							li.speakers__card_item= item
+					.speakers__card_content
+						h3.speakers__card_title Виталий #[br] вальков #[span построение команды]
+						ul.speakers__card_list
+							each item in ['Основатель палтформы для творческих CREO','Основатель студии дизайна Creo-agency','Создал более чем 1000 логотипов','Работал с клиентами с более чем 20 стран мира']
+								li.speakers__card_item= item

@@ -1,14 +1,15 @@
 section.section.how
-	.how__image_col
-		+picture({
-			class: 'how__img',
-			img_class: 'how__img_in',
-			img: `how_img.png`,
-			alt: 'laptop',
-		})
 	.section_in.how__in
 		.how__title
 			h2.how__title_in Как проходит обучение
+		.how__image_col
+			+picture({
+				class: 'how__img',
+				img_class: 'how__img_in',
+				img: `how_img.png`,
+				alt: 'laptop',
+				loading: 'lazy',
+			})
 		.how__row
 			.how__col
 				ul.how__list
@@ -21,6 +22,7 @@ section.section.how
 								img_class: 'how__icon_in',
 								img: `how_${index}.png`,
 								alt: 'icon',
+								loading: 'lazy',
 							})
 							.how__descr= item
 				.how__info
@@ -31,12 +33,6 @@ section.section.how
 						img_class: 'how__info_bg_in',
 						img: `how_bg.png`,
 						alt: 'laptop',
+						loading: 'lazy',
 					})
 					.how__info_descr Для просмотра уроков вам подойдет телефон или ноутбук
-			//- .how__col
-			//- 	+picture({
-			//- 		class: 'how__img',
-			//- 		img_class: 'how__img_in',
-			//- 		img: `how_img.png`,
-			//- 		alt: 'laptop',
-			//- 	})

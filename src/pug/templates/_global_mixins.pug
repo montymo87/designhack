@@ -189,4 +189,4 @@ mixin picture(data)
 					source(srcset=`${assetsImage}${imgPath}.${type}.${imgType}${is2x ? `, ${imgPath}@2x.${type}.${imgType} 2x` : ''}` type=`image/${imgType}`)
 				else
 					source(srcset=`${assetsImage}${imgPath}.${imgType}${is2x ? `, ${assetsImage}${imgPath}@2x.${imgType} 2x` : ''}` type=`image/${imgType}`)
-		img(class= imgClass src=`${assetsImage}${imgPath}.${type}` alt=data.alt)
+		img(class= imgClass src=`${assetsImage}${imgPath}.${type}` alt=data.alt loading=data.loading)

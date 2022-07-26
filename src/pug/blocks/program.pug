@@ -4,6 +4,14 @@ section.section.program
 		img_class: 'program__decor_in',
 		img: `prog_decor.png`,
 		alt: 'decor',
+		loading: 'lazy',
+	})
+	+picture({
+		class: 'program__decor2_img',
+		img_class: 'program__decor2_in',
+		img: 'prog_bg_2.png',
+		alt: 'decor',
+		loading: 'lazy',
 	})
 	.section_in.program__in
 		.program__title
@@ -188,7 +196,7 @@ section.section.program
 					{
 						mod: 'program__item--new program__item--prem program__item--vip',
 						title: 'UpWork',
-						result_descr: 'Научитесь генеировать клиентов со всего мира с помощью платформы Upwork',
+						result_descr: 'Научитесь генерировать клиентов со всего мира с помощью платформы Upwork',
 						descr_list: ['Основы и принципы','Типы аудитории платформы','Верификация','Типы контрактов','Комиссии','Правила','Упаковка профиля','Поиск Job-постов','Анализ Job-поста','Лидогенерация, составление Proposal','Воронка','Принципы в продаже','Долгосрочный успех на платформе'],
 					},
 					{
@@ -225,34 +233,44 @@ section.section.program
 						result_descr: 'Подведете итоги, как сильно вы вырос(-ла) за последний месяц. Зарядитесь на дальнейшую работу. Узнаешь, как постоянно расти в своем доходе.',
 						descr_list: ['Обсуждения процесса от точки', 'А до точки Б','Детальный разбор каждого ученика','Общение, поддержка, ответы на ','все итоговые вопросы',],
 					},
+					//- {
+					//- 	mod: 'program__item',
+					//- 	custom: true,
+					//- },
 				]
 
 			each item, index in programList
-				li.program__item(class= item.mod)
-					.program__item_in
-						.program__item_acc_item_head
-							.program__item_offer
-								.program__item_offer_item.program__item_offer_item--num= `Блок ${index}`
-								.program__item_offer_item.program__item_offer_item--new
-								.program__item_offer_item.program__item_offer_item--prem premium
-								.program__item_offer_item.program__item_offer_item--vip vip
-							.program__item_title= item.title
-						.program__item_acc_item_body
-							.program__item_descr
-								.program__item_descr_title Содержание урока:
-								ul.program__item_descr_list
-									each descr_item in item.descr_list
-										li.program__item_descr_item!= descr_item
-								if item.mat_list
-									.program__item_descr_title.program__item_descr_title--offset_mod материалы:
-									ul.program__item_mat_list
-										each matitem in item.mat_list
-											li.program__item_mat_item= matitem.text
-												.program__item_mat_img
-													img(src=`images/mat_${matitem.icon}.png` alt="icon").program__item_mat_img_in
-							.program__item_result
-								.program__item_descr_title Результат:
-								.program__item_result_descr= item.result_descr
+				if item.custom
+					li.program__item_image(class= item.mod)
+						.program__item_in
+				else
+					li.program__item(class= item.mod)
+						.program__item_in
+							.program__item_acc_item_head.programAcc
+								.program__item_offer
+									.program__item_offer_item.program__item_offer_item--num= `Блок ${index}`
+									.program__item_offer_item.program__item_offer_item--new
+									.program__item_offer_item.program__item_offer_item--prem premium
+									.program__item_offer_item.program__item_offer_item--vip vip
+								.program__item_title= item.title
+									span.program__item_icon
+										+icon('arrow', 'icon--size_mod')
+							.program__item_acc_item_body
+								.program__item_descr
+									.program__item_descr_title Содержание урока:
+									ul.program__item_descr_list
+										each descr_item in item.descr_list
+											li.program__item_descr_item!= descr_item
+									if item.mat_list
+										.program__item_descr_title.program__item_descr_title--offset_mod материалы:
+										ul.program__item_mat_list
+											each matitem in item.mat_list
+												li.program__item_mat_item= matitem.text
+													.program__item_mat_img
+														img(src=`images/mat_${matitem.icon}.png` alt="icon" loading="lazy").program__item_mat_img_in
+								.program__item_result
+									.program__item_descr_title Результат:
+									.program__item_result_descr= item.result_descr
 		.program__btn_w
 			button.program__btn.ProgBtn
 				span вся программа
